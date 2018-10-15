@@ -1,0 +1,8 @@
+repositories {
+    mavenLocal()
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    mavenCentral()
+    maven { url 'https://clojars.org/repo' }
+    maven { url 'https://jitpack.io' }
+    maven { url 'http://nexus.tuanche.cn/nexus/content/groups/public/' }
+}

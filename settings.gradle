@@ -1,0 +1,5 @@
+rootProject.name = 'util'
+
+enableFeaturePreview('IMPROVED_POM_SUPPORT')
+
+include 'net'

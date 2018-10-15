@@ -1,0 +1,26 @@
+plugins {
+    id 'java-library' //java依赖
+    id 'io.franzbecker.gradle-lombok' version '1.14' //lombok依赖
+    id 'maven'
+}
+
+dependencies {
+    testCompile 'org.testng:testng'
+
+//
+//    //SpringBoot
+//    compile 'org.springframework.boot:spring-boot-starter-web'
+//
+//    //序列化
+//    implementation 'com.fasterxml.jackson.core:jackson-annotations'
+//    implementation 'com.fasterxml.jackson.core:jackson-core'
+//    implementation 'com.fasterxml.jackson.core:jackson-databind'
+//    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml'
+//
+//    //时间
+//    implementation 'joda-time:joda-time:2.10'
+//
+//    //apache-commons
+//    implementation 'org.apache.commons:commons-collections4'
+//    implementation 'org.apache.commons:commons-lang3'
+}

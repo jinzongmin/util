@@ -1,0 +1,22 @@
+apply plugin: 'io.spring.dependency-management'//依赖管理
+dependencyManagement {
+    imports {
+        mavenBom 'org.springframework.boot:spring-boot-dependencies:2.0.4.RELEASE'
+        mavenBom 'com.fasterxml.jackson:jackson-bom:2.9.7'
+    }
+    dependencies {
+        //时间
+        dependency 'joda-time:joda-time:2.10'
+
+        //apache-commons
+        dependency 'org.apache.commons:commons-collections4:4.2'
+        dependency 'org.apache.commons:commons-lang3:3.8.1'
+
+        //网络
+        dependency 'com.squareup.okhttp3:okhttp:3.11.0'
+        
+        
+        //测试
+        dependency 'org.testng:testng:6.10'
+    }
+}

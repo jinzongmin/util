@@ -1,0 +1,44 @@
+plugins {
+    //Gradle插件
+    id 'com.gradle.build-scan' version '1.16' //构建扫描
+
+    //IDE插件
+    id 'idea'
+
+    //SpringBoot相关插件
+    id 'org.springframework.boot' version '2.0.5.RELEASE'
+
+    //第三方插件
+    id 'io.spring.dependency-management' version '1.0.6.RELEASE' //依赖管理
+}
+
+//构建扫描插件配置项
+buildScan {
+    termsOfServiceUrl = 'https://gradle.com/terms-of-service'
+    termsOfServiceAgree = 'yes'
+}
+
+group = 'com.github.jinzongmin'
+version = '0.0.1-SNAPSHOT'
+
+allprojects {
+    apply from: "${project.rootDir}/gradle/repositories.gradle"
+    apply from: "${project.rootDir}/gradle/dependencyManagement.gradle"
+
+    [JavaPlugin, JavaLibraryPlugin].each { plugin ->
+
+        plugins.withType(plugin).whenPluginAdded {
+            sourceCompatibility = JavaVersion.VERSION_1_8
+
+            if(plugin.name == JavaPlugin.name){
+                dependencies {
+                    testCompile 'org.testng:testng'
+                }
+            }else {
+                dependencies {
+                    testImplementation 'org.testng:testng'
+                }
+            }
+        }
+    }
+}
